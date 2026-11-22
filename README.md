@@ -2,9 +2,12 @@
 ### AI-Powered Dynamic Hydraulic Loss Decomposition & Geotechnical Canal Health Monitoring System
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Live_Demo-F38020?logo=cloudflare&logoColor=white)](https://neerdrishti-assam.pages.dev)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100+-green.svg)](https://fastapi.tiangolo.com)
 [![NESFIC 2026](https://img.shields.io/badge/Challenge-NESFIC--D--02-orange.svg)](https://startup.assam.gov.in/nesfic26/problem-statements/nesfic-d-02)
+
+**🌐 Live Demo & Cloudflare Deployment:** [https://neerdrishti-assam.pages.dev](https://neerdrishti-assam.pages.dev)
 
 **NeerDrishti Assam** is an end-to-end edge-to-cloud AI digital twin and geotechnical monitoring platform engineered for the **Irrigation Department, Government of Assam** under the **North East Seva First Innovation Challenge 2026 (NESFIC-D-02)**.
 
