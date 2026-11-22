@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /NESFIC_D02_*.pdf
+
+Sitemap: https://neerdrishti-assam.pages.dev/sitemap.xml

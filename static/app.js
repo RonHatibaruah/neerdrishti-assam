@@ -16,7 +16,36 @@ document.addEventListener('DOMContentLoaded', () => {
   fetchLatestData();
   // Poll telemetry every 10 seconds for real-time live feed
   setInterval(pollTelemetry, 10000);
+
+  // Initialize hash-based SEO deep-linking
+  initHashRouting();
+  window.addEventListener('hashchange', initHashRouting);
+
+  // Close modals on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeDispatchModal();
+      closeTutorialModal();
+    }
+  });
 });
+
+function initHashRouting() {
+  const hash = window.location.hash.toLowerCase();
+  if (hash === '#tutorial') {
+    openTutorialModal(false);
+  } else if (hash === '#gis-digital-twin' || hash === '#gis') {
+    switchTab('tab-gis', false);
+  } else if (hash === '#hydraulic-mass-balance' || hash === '#hydro-loss-balance' || hash === '#balance') {
+    switchTab('tab-balance', false);
+  } else if (hash === '#drone-defect-matrix' || hash === '#drone-defects' || hash === '#defects') {
+    switchTab('tab-defects', false);
+  } else if (hash === '#predictive-work-orders' || hash === '#work-orders' || hash === '#orders') {
+    switchTab('tab-orders', false);
+  } else if (hash === '#breach-warning-simulation' || hash === '#breach-simulation' || hash === '#surge') {
+    switchTab('tab-surge', false);
+  }
+}
 
 async function fetchLatestData() {
   try {
@@ -303,10 +332,11 @@ function renderWorkOrders() {
   });
 }
 
-function switchTab(tabId) {
+function switchTab(tabId, updateHash = true) {
   state.activeTab = tabId;
   document.querySelectorAll('.tab-content').forEach(el => el.classList.add('hidden'));
-  document.getElementById(tabId).classList.remove('hidden');
+  const target = document.getElementById(tabId);
+  if (target) target.classList.remove('hidden');
 
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.classList.remove('text-waterBlue', 'border-waterBlue');
@@ -317,6 +347,61 @@ function switchTab(tabId) {
   if (activeBtn) {
     activeBtn.classList.remove('text-slate-500', 'border-transparent');
     activeBtn.classList.add('text-waterBlue', 'border-waterBlue');
+  }
+
+  if (updateHash) {
+    const hashMap = {
+      'tab-gis': 'gis-digital-twin',
+      'tab-balance': 'hydraulic-mass-balance',
+      'tab-defects': 'drone-defect-matrix',
+      'tab-orders': 'predictive-work-orders',
+      'tab-surge': 'breach-warning-simulation'
+    };
+    if (hashMap[tabId]) {
+      history.replaceState(null, '', '#' + hashMap[tabId]);
+    }
+  }
+}
+
+function openTutorialModal(updateHash = true) {
+  const modal = document.getElementById('tutorialModal');
+  if (modal) modal.classList.remove('hidden');
+  if (updateHash) {
+    history.replaceState(null, '', '#tutorial');
+  }
+}
+
+function closeTutorialModal() {
+  const modal = document.getElementById('tutorialModal');
+  if (modal) modal.classList.add('hidden');
+  // Restore tab hash
+  const hashMap = {
+    'tab-gis': 'gis-digital-twin',
+    'tab-balance': 'hydraulic-mass-balance',
+    'tab-defects': 'drone-defect-matrix',
+    'tab-orders': 'predictive-work-orders',
+    'tab-surge': 'breach-warning-simulation'
+  };
+  const currentTab = state.activeTab || 'tab-gis';
+  if (hashMap[currentTab]) {
+    history.replaceState(null, '', '#' + hashMap[currentTab]);
+  }
+}
+
+function switchTutTab(tutTabId) {
+  document.querySelectorAll('.tut-content').forEach(el => el.classList.add('hidden'));
+  const target = document.getElementById(tutTabId);
+  if (target) target.classList.remove('hidden');
+
+  document.querySelectorAll('.tut-nav-btn').forEach(btn => {
+    btn.classList.remove('text-deepTeal', 'border-deepTeal', 'font-bold');
+    btn.classList.add('text-slate-500', 'border-transparent', 'font-semibold');
+  });
+
+  const activeBtn = document.getElementById(`btn-${tutTabId}`);
+  if (activeBtn) {
+    activeBtn.classList.remove('text-slate-500', 'border-transparent', 'font-semibold');
+    activeBtn.classList.add('text-deepTeal', 'border-deepTeal', 'font-bold');
   }
 }
 
