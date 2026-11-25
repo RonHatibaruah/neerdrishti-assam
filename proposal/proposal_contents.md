@@ -49,15 +49,15 @@ NeerDrishti Assam transforms this reactive paradigm into a real-time, predictive
 3. **Pore-Pressure & Geotechnical Breach Predictor:**  
    Ingests soil moisture and vibrating-wire piezometer readings from canal dykes. Utilizing Bishop’s modified limit-equilibrium slope stability model, it continuously calculates embankment Factors of Safety (FoS) and forecasts piping/slumping failure 12–24 hours ahead of flash flood surges.
 4. **Drone & Mobile Computer Vision (CV) Defect Analyzer:**  
-   Processes aerial drone footage and mobile patrol photos via fine-tuned YOLOv8 models to detect, classify, and quantify concrete lining cracks, toe scouring, sediment bars, and water hyacinth choking with >92% mAP accuracy.
+   Processes aerial drone footage and mobile patrol photos via fine-tuned YOLOv8 models to detect, classify, and quantify concrete lining cracks, toe scouring, sediment bars, and water hyacinth choking with Greater than 92% mAP accuracy.
 5. **Predictive Asset Health Index (AHI) & Automated E-Nirman Work Orders:**  
    Synthesizes geotechnical, hydraulic, and structural scores into an Asset Health Index (0–100). Automatically generates prioritized work orders with Bill of Quantities (BoQ) estimated against Assam PWD/Irrigation Schedule of Rates (SOR) and dispatches them to respective Division Executive Engineers.
 6. **Farmer Water Equity & Grievance Telemetry:**  
    Tracks the Delivery Equity Index (DEI) at tail-end distributaries, correlating water arrival with local WUA schedules.
 
 **User Interaction & Changes Versus Current Approach:**  
-- **Before:** Manual patrol -> Paper reporting (5–14 days) -> Emergency breach repair post-disaster -> Parched tail-end crops.  
-- **With NeerDrishti:** Continuous autonomous IoT telemetry -> Real-time GIS anomaly alerts (<15 mins) -> Automated work order generated with repair specs -> Predictive prevention of breaches and guaranteed water equity for tail-end cultivators.
+- **Before:** Manual patrol to Paper reporting (5–14 days) to Emergency breach repair post-disaster to Parched tail-end crops.  
+- **With NeerDrishti:** Continuous autonomous IoT telemetry to Real-time GIS anomaly alerts (Smaller than 15 mins) to Automated work order generated with repair specs to Predictive prevention of breaches and guaranteed water equity for tail-end cultivators.
 
 *(Word Count: 385 words)*
 
@@ -68,7 +68,7 @@ NeerDrishti Assam transforms this reactive paradigm into a real-time, predictive
 **Proposed User Journey:**  
 1. **Field Telemetry & Edge Detection:** Solar-powered ultrasonic level sensors, acoustic velocity gauges, and embankment piezometers transmit real-time telemetry every 10 minutes via cellular/LoRaWAN to the Assam State Data Centre (ASDC).
 2. **Executive Engineer (EE) GIS Command Console:** The Division EE logs into the web dashboard and views an interactive color-coded chainage map (Green = Intact, Amber = High Seepage/Silt, Red = Imminent Breach).
-3. **Automated Incident Triage:** When abnormal water loss (>15% design discharge) or pore pressure spikes (>60 kPa) occur along a reach (e.g., Dhansiri Main Canal RD 14.2 km), NeerDrishti generates a high-priority incident alert.
+3. **Automated Incident Triage:** When abnormal water loss (Greater than 15% design discharge) or pore pressure spikes (Greater than 60 kPa) occur along a reach (e.g., Dhansiri Main Canal RD 14.2 km), NeerDrishti generates a high-priority incident alert.
 4. **Automated Work-Order Dispatch:** The system auto-calculates repair quantities (e.g., 450 geo-textile sandbags, 12 cum boulder rip-rap) based on Assam Irrigation Schedule of Rates (SOR), dispatching an actionable digital work order to the Sub-Divisional Officer (SDO) and Section Officer (SO) via SMS/WhatsApp.
 5. **Mobile Geotagged Verification:** The SO inspects the site using the offline-capable NeerDrishti Mobile App, uploads post-rectification geo-tagged photos, and closes the ticket, synchronizing with Assam’s E-Nirman portal.
 6. **Farmer WUA Confirmation:** Tail-end water arrival triggers an automated SMS notification to local Water Users’ Associations confirming restored canal discharge.
@@ -98,7 +98,7 @@ NeerDrishti Assam is architected as a modular, cloud-agnostic, and edge-resilien
 
 **2. Software & Backend Architecture:**  
 - **Backend Core:** High-performance Python / FastAPI asynchronous microservices delivering RESTful APIs and WebSocket data streams for live sensor telemetry and incident management.
-- **Spatial GIS & Database:** PostgreSQL with PostGIS extension for spatial canal chainage geometries, coupled with TimescaleDB for time-series sensor ingestion (handling >10,000 pings/sec).
+- **Spatial GIS & Database:** PostgreSQL with PostGIS extension for spatial canal chainage geometries, coupled with TimescaleDB for time-series sensor ingestion (handling Greater than 10,000 pings/sec).
 - **Frontend Dashboard:** Modern responsive single-page application (SPA) built with Tailwind CSS, interactive SVG/Leaflet GIS mapping, dynamic chart analytics, and mobile-friendly field inspector views.
 
 **3. AI/ML Models & Analytical Algorithms:**  
@@ -131,7 +131,7 @@ The project adopts a hybrid **Agile-V-Model Framework**, blending rapid, iterati
    - *Key Outputs:* Lab-tested IoT edge sensor node prototypes and telemetry ingestion microservices.
 3. **Phase 3: Digital Twin & AI Model Training (Weeks 9–14):**  
    - *Activities:* Numerical calibration of 1D Saint-Venant hydraulic mass-balance models; synthetic generation of abnormal seepage profiles; training YOLOv8 computer vision models on 14,000+ labeled canal distress images; Bishop slope stability algorithm validation.  
-   - *Key Outputs:* Containerized AI microservices (Mass-Balance Engine, FoS Breach Predictor, CV Defect Classifier) achieving >90% validation accuracy.
+   - *Key Outputs:* Containerized AI microservices (Mass-Balance Engine, FoS Breach Predictor, CV Defect Classifier) achieving Greater than 90% validation accuracy.
 4. **Phase 4: Minimum Viable Product (MVP) & Dashboard Build (Weeks 15–18):**  
    - *Activities:* Development of the unified GIS Command Dashboard and Android Mobile App for field engineers; integration with Assam PWD/Irrigation Schedule of Rates (SOR); implementation of role-based authorization (State CE, Division EE, SDO, SO).  
    - *Key Outputs:* End-to-end operational MVP platform deployed on staging environment with live simulation controls.
@@ -169,7 +169,7 @@ Month 7: E-Nirman Integration, Departmental Training & Final Handover (Weeks 25�
   *Deliverables:* Tested solar LoRaWAN/4G sensor nodes; secure MQTT/HTTP ingestion broker deployed on staging; simulated data stream generator.  
   *Dependencies:* Timely hardware component procurement and lab calibration.
 - **Milestone 3 (End of Week 14) — AI Engine & MVP Platform Launch:**  
-  *Deliverables:* Calibrated 1D Saint-Venant mass-balance solver; trained YOLOv8 defect detection model (mAP > 90%); functioning web dashboard and mobile inspection APK.  
+  *Deliverables:* Calibrated 1D Saint-Venant mass-balance solver; trained YOLOv8 defect detection model (mAP Greater than 90%); functioning web dashboard and mobile inspection APK.  
   *Dependencies:* Historical canal design discharge profiles and cross-sectional L-sections from division offices.
 - **Milestone 4 (End of Week 20) — Field Commissioning & Validation Readiness:**  
   *Deliverables:* 30 km physical sensor installation completed on Jamuna and Dhansiri canals; live telemetry streaming to Assam State Data Centre; initiation of joint field validation with departmental engineers.  
@@ -260,18 +260,18 @@ Deep domain understanding of the Brahmaputra alluvial hydrology, transient pore-
 Testing is executed across four progressive tiers to ensure fail-safe operational reliability under extreme weather:
 1. **Unit & Edge Hardware Testing:** Environmental chamber testing of sensor nodes (IP68 immersion, thermal cycling -5°C to 55°C, simulated lightning surge protection, and 14-day continuous battery drain test without solar recharge).
 2. **Algorithm & Hydraulic Benchmarking:** Verification of the 1D Saint-Venant mass-balance solver against standard US Army Corps HEC-RAS hydraulic models across 100+ simulated canal reach scenarios.
-3. **Computer Vision Stress-Testing:** Evaluation of the YOLOv8 defect detection model across varied lighting, turbidity, and drone altitudes, maintaining >92% mAP@50 and zero false negatives on critical cracks >25mm.
-4. **End-to-End System Integration Testing:** Simulated high-throughput telemetry ingestion (10,000 requests/sec) to verify ASDC server responsiveness, automated E-Nirman work-order creation, and SMS alert delivery (<10 seconds).
+3. **Computer Vision Stress-Testing:** Evaluation of the YOLOv8 defect detection model across varied lighting, turbidity, and drone altitudes, maintaining Greater than 92% mAP@50 and zero false negatives on critical cracks Greater than 25mm.
+4. **End-to-End System Integration Testing:** Simulated high-throughput telemetry ingestion (10,000 requests/sec) to verify ASDC server responsiveness, automated E-Nirman work-order creation, and SMS alert delivery (Smaller than 10 seconds).
 
 **Proposed Performance & Quality Measures:**  
-- **Detection Latency:** Seepage anomalies and unauthorized cuts flagged in <15 minutes (versus 5–14 days manual patrol baseline).
+- **Detection Latency:** Seepage anomalies and unauthorized cuts flagged in Smaller than 15 minutes (versus 5–14 days manual patrol baseline).
 - **Early Breach Warning Lead Time:** 12 to 24 hours advance warning prior to slope shear failure under simulated flood surges.
 - **Conveyance Efficiency Gain:** Minimum 18–22% recovery of unmonitored transit water losses across the pilot stretch.
-- **Tail-End Delivery Equity Index (DEI):** Improvement from baseline 38.5% to >70% equitable discharge delivery at tail distributaries.
+- **Tail-End Delivery Equity Index (DEI):** Improvement from baseline 38.5% to Greater than 70% equitable discharge delivery at tail distributaries.
 - **Sensor Telemetry Uptime:** $\ge$ 98.5% continuous data availability during monsoon periods.
 
 **Prior Evidence, Research & Prototype Results:**  
-- **Operational Prototype Results:** The developed prototype has been evaluated against historical discharge records from the Jamuna Irrigation Scheme (RD 0.0 to 28.5 km). When injected with a simulated 60 cusecs seepage breach at RD 9.1 km, the mass-balance engine accurately isolated the affected reach within 12 minutes, calculating an unmonitored loss of 62.5 cusecs (error margin <4.1%).
+- **Operational Prototype Results:** The developed prototype has been evaluated against historical discharge records from the Jamuna Irrigation Scheme (RD 0.0 to 28.5 km). When injected with a simulated 60 cusecs seepage breach at RD 9.1 km, the mass-balance engine accurately isolated the affected reach within 12 minutes, calculating an unmonitored loss of 62.5 cusecs (error margin Smaller than 4.1%).
 - **Geotechnical Embankment Evidence:** In simulation testing for the Dhansiri Main Canal (RD 14.2 km), the system tracked escalating pore pressures (from 24 kPa to 68 kPa), accurately projecting a drop in the Factor of Safety from 1.42 to 1.08 and issuing an automated sluice throttling advisory 14.5 hours prior to critical slope failure.
 - **Prior Deployments:** Team members bring prior field deployment experience in IoT-based hydrological monitoring and dam safety decision-support systems in comparable Himalayan river basins.
 
@@ -320,7 +320,7 @@ NeerDrishti Assam introduces three ground-breaking technical innovations enginee
 **Basis of Differentiation:**  
 | Feature Dimension | Traditional Practice | Generic Remote Sensing | NeerDrishti Assam |
 | :--- | :--- | :--- | :--- |
-| **Detection Speed** | 5–14 days | 5–10 days (cloud prone) | **< 15 minutes (IoT Telemetry)** |
+| **Detection Speed** | 5–14 days | 5–10 days (cloud prone) | **Smaller than 15 minutes (IoT Telemetry)** |
 | **Breach Prediction** | Post-disaster reaction | None | **12–24h Advance Warning (FoS)** |
 | **Water Equity Tracking** | Farmer complaints | None | **Real-time Tail-End Equity Index** |
 | **Procurement Linkage** | Manual crisis tender | None | **Auto BoQ via Assam SOR** |
@@ -362,6 +362,6 @@ The total grant required for developing, field-deploying, and validating the Nee
 The solution will be validated over a **6-month pilot deployment** across two contrasting, representative schemes:
 - **Jamuna Main Canal (RD 0.0 to 15.0 km, Hojai Division):** Focuses on unlined/lined masonry condition monitoring, seepage localization, and restoring tail-end water equity.
 - **Dhansiri Main Canal (RD 12.0 to 24.5 km, Udalguri Division):** Focuses on flood-surge embankment stability, pore-pressure monitoring, and early breach forecasting along high-permeability sandy-silt dykes.  
-Validation success will be formally certified by a joint committee of the Irrigation Department, demonstrating $\ge$18% conveyance efficiency gain and <15-minute anomaly detection latency.
+Validation success will be formally certified by a joint committee of the Irrigation Department, demonstrating $\ge$18% conveyance efficiency gain and Smaller than 15-minute anomaly detection latency.
 
 *(Word Count: 428 words)*
